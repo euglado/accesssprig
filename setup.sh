@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "$0")"
+command -v node >/dev/null || { echo 'Install Node.js 24 LTS / Node.js 24 LTS kur.'; exit 1; }
+npm ci --ignore-scripts
+npm run setup

@@ -1,0 +1,29 @@
+{
+  "name": "accesssprig",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Private Discord channel permission explanations for the member who asks",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.13.0 <25"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "register": "node --env-file-if-exists=.env src/register.ts",
+    "start": "node --env-file-if-exists=.env src/main.ts",
+    "test": "node --test test/*.test.ts",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "security": "node scripts/check-supply.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run security"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
